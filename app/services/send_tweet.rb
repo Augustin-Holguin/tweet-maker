@@ -1,8 +1,6 @@
-#!/usr/bin/env ruby
-
 class SendTweet
 
-  def initialize (tweet)
+  def initialize(tweet)
     @tweet = tweet
   end
 
@@ -11,19 +9,18 @@ class SendTweet
 		send_tweet
 	end
 
-private
+  private
 
-  def log_in_to_twitter
+    def log_in_to_twitter
       @client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = "95062M0UShvrETyxqpnZavPoe"
-      config.consumer_secret     = "supOIufJlhD2slrXZsnzfhzWXEO2zdldyS5ghhem4PQf2a9vOT"
-      config.access_token        = "885126648730988545-4H6IXL3mq4eUz2ngxiAmKnYjD24X4IO"
-      config.access_token_secret = "O8UuvngeouTq8JQ4qdK5gwNSe149M54fu4ed1P0R94DLA"
+      config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
+	  	config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
+	  	config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+	  	config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
+      end
+    end
+
+    def send_tweet
+      @client.update(@tweet)
     end
   end
-
-  def send_tweet
-    @client.update(@tweet)
-  end
-
-end
