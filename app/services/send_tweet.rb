@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-require "twitter"
 
 class SendTweet
 
@@ -7,7 +6,10 @@ class SendTweet
     @tweet = tweet
   end
 
-end
+  def perform
+		log_in_to_twitter
+		send_tweet
+	end
 
 private
 

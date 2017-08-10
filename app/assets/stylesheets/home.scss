@@ -1,3 +1,41 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  background: #1da1f2;
+  color: white;
+  padding: 20px;
+  font-size: 80px;
+}
+
+p {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 40px;
+}
+
+footer {
+  position:fixed;
+  bottom:0px;
+  width:100%;
+  background:#657786;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.form_tag {
+  text-align: center;
+  margin-top: 180px;
+}
